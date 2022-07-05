@@ -1,15 +1,11 @@
 package br.com.ulteriorti.exercicios.collections;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 
-class Clima {
+class Clima implements Comparable<Clima> {
     Double temperatura = 0.0;
     int mes = 0;
-
 
     public boolean equals(Clima o) {
         if (this.mes == o.mes) {
@@ -31,22 +27,41 @@ class Clima {
                 ", mes=" + mes +
                 '}';
     }
+
+    @Override
+    public int compareTo(Clima o) {
+        if (this.mes > o.mes)
+            return 1;
+        if (this.mes < o.mes)
+            return -1;
+        else return 0;
+    }
 }
 
 public class ExTempo {
     public static void main(String[] args) {
         List<Clima> historico = new ArrayList<>();
+
         addMesesSemestre(historico, 1);
+
         Double mediaSemestre1 = calcularMediaSemestral(historico, 1);
+
         System.out.println("Media primeiro semestre: " + mediaSemestre1);
+
         acimaDaMedia(historico, mediaSemestre1);
+
+        System.out.println(historico);
+
+        //reordena por temperatura
+        Collections.sort(historico, new ComparatorTemperatura());
+        System.out.println(historico);
 
     }
 
     private static void acimaDaMedia(List<Clima> historico, double media) {
         for (Clima c : historico) {
             if (c.temperatura > media) {
-                System.out.println("Mes "+ mesPorExtenso(c.mes) + " acima da media "+ c.temperatura);
+                System.out.println("Mes " + mesPorExtenso(c.mes) + " acima da media " + c.temperatura);
             }
         }
     }
@@ -88,11 +103,11 @@ public class ExTempo {
             acumulador += historico.get(i).temperatura;
         }
 
-        return acumulador / 6;
+        return acumulador / historico.size();
     }
 
-    private static String mesPorExtenso(int mes){
-        switch (mes){
+    private static String mesPorExtenso(int mes) {
+        switch (mes) {
             case 1:
                 return "Janeiro";
             case 2:
@@ -122,4 +137,11 @@ public class ExTempo {
         }
     }
 
+    static class ComparatorTemperatura implements Comparator<Clima> {
+
+        @Override
+        public int compare(Clima o1, Clima o2) {
+            return Double.compare(o1.temperatura, o2.temperatura);
+        }
+    }
 }
