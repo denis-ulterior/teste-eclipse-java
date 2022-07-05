@@ -1,4 +1,4 @@
-package br.com.ulteriorti.exercicios;
+package br.com.ulteriorti.exercicios.basico;
 
 import java.util.ArrayList;
 import java.util.List;

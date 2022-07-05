@@ -1,9 +1,6 @@
-package br.com.ulteriorti.exercicios;
+package br.com.ulteriorti.exercicios.basico;
 
-import java.util.Scanner;
-
-import static br.com.ulteriorti.exercicios.Ex4.*;
-import static br.com.ulteriorti.exercicios.StringOperators.paraString;
+import static br.com.ulteriorti.exercicios.basico.StringOperators.paraString;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +20,10 @@ public class Main {
 //        Ex7arrays.reverterArray();
 //        Ex7arrays.imprimirArray();
 
-        Ex8.run();
+//        Ex8.run();
+//        Ex9.run();
+
+        Ex10.run();
 
     }
 

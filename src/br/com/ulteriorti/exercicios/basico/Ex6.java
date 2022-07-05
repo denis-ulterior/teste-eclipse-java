@@ -1,4 +1,4 @@
-package br.com.ulteriorti.exercicios;
+package br.com.ulteriorti.exercicios.basico;
 
 public class Ex6 {
     /**

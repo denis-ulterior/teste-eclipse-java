@@ -1,8 +1,8 @@
-package br.com.ulteriorti.exercicios;
+package br.com.ulteriorti.exercicios.basico;
 
 import java.util.Scanner;
 
-import static br.com.ulteriorti.exercicios.StringOperators.paraString;
+import static br.com.ulteriorti.exercicios.basico.StringOperators.paraString;
 
 public class Ex1 {
     public static void run() {

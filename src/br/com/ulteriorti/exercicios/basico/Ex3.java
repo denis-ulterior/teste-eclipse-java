@@ -1,6 +1,5 @@
-package br.com.ulteriorti.exercicios;
+package br.com.ulteriorti.exercicios.basico;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class Ex3 {
